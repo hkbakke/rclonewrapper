@@ -38,10 +38,6 @@ rclone_copy () {
     ) 9>${LOCKFILE}
 }
 
-rclone_list () {
-    ${RCLONE} ls ${REMOTE}
-}
-
 
 source "${CONFIG}" || exit 1
 
@@ -49,8 +45,6 @@ if [[ ${MODE} == "copy" ]]; then
     rclone_copy
 elif [[ ${MODE} == "sync" ]]; then
     rclone_sync
-elif [[ ${MODE} == "list" ]]; then
-    rclone_list
 else
     print_usage
 fi
