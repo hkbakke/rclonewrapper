@@ -1,0 +1,12 @@
+RCLONE="/usr/local/sbin/rclone"
+FLOCK="/usr/bin/flock"
+REMOTE="acd-encrypted:"
+LOCKFILE="/var/lock/rclonewrapper.lock"
+INCLUDES=(
+    "/srv/media/**"
+    "/home/**"
+)
+EXCLUDES=(
+)
+RCLONE_OPTIONS=(
+)
