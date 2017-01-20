@@ -9,5 +9,5 @@ INCLUDES=(
 EXCLUDES=(
 )
 RCLONE_OPTIONS=(
-    --max-size 49G
+    --max-size 50000M
 )
