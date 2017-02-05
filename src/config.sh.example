@@ -5,5 +5,6 @@ REMOTE="acd-encrypted:"
 FILTERFILE="/etc/rclonewrapper/filter.rules"
 LOCKFILE="/var/lock/rclonewrapper.lock"
 RCLONE_OPTIONS=(
+    --delete-excluded
     --max-size 50000M
 )
