@@ -16,23 +16,13 @@ rclone_sync () {
 }
 
 rclone_copy () {
-    INCLUDE_CMD=()
-    for INCLUDE in "${INCLUDES[@]}"; do
-        INCLUDE_CMD+=( --include "${INCLUDE}" )
-    done
-
-    EXCLUDE_CMD=()
-    for EXCLUDE in "${EXCLUDES[@]}"; do
-        EXCLUDE_CMD+=( --exclude "${EXCLUDE}" )
-    done
-
     (
         flock -n 9 || exit 1
 
         ${RCLONE} \
-            "${INCLUDE_CMD[@]}" \
-            "${EXCLUDE_CMD[@]}" \
-            ${MODE} ${LOCAL} ${REMOTE} \
+            ${MODE} \
+            --filter-from "${FILTERFILE}" \
+            ${LOCAL} ${REMOTE} \
             "${RCLONE_OPTIONS[@]}"
     ) 9>${LOCKFILE}
 }

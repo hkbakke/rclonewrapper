@@ -2,13 +2,8 @@ RCLONE="/usr/local/sbin/rclone"
 FLOCK="/usr/bin/flock"
 LOCAL="/"
 REMOTE="acd-encrypted:"
+FILTERFILE="/etc/rclonewrapper/filter.rules"
 LOCKFILE="/var/lock/rclonewrapper.lock"
-INCLUDES=(
-    "/srv/media/**"
-    "/home/**"
-)
-EXCLUDES=(
-)
 RCLONE_OPTIONS=(
     --max-size 50000M
 )
