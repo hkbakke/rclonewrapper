@@ -2,7 +2,6 @@
 
 MODE="${1}"
 CONFIG="/etc/rclonewrapper/config.sh"
-LOCAL="/"
 
 
 print_usage () {

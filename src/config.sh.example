@@ -1,5 +1,6 @@
 RCLONE="/usr/local/sbin/rclone"
 FLOCK="/usr/bin/flock"
+LOCAL="/"
 REMOTE="acd-encrypted:"
 LOCKFILE="/var/lock/rclonewrapper.lock"
 INCLUDES=(
